@@ -7,8 +7,6 @@ def review(request):
     if request.method == 'POST':
         form = ReviewForm(request.POST)
         if form.is_valid():
-            name = form.cleaned_data['name']
-            email = form.cleaned_data['email']
-            review = form.cleaned_data['review']
+            form.send_email()
             return HttpResponse('Email received')
     return render(request, 'app2/review.html', {'form': form})
