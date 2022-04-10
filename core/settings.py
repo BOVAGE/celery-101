@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app1',
     'app2',
+    'app3',
+    'django_celery_beat',
 ]
 
 MIDDLEWARE = [
@@ -134,3 +136,10 @@ EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
+
+CELERY_BEAT_SCHEDULE = {
+    'backup task': {
+        'task': 'app3.tasks.backup',
+        'schedule': 10.0,
+    }
+}
