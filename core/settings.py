@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'app2',
     'app3',
     'django_celery_beat',
+    'django_celery_results',
 ]
 
 MIDDLEWARE = [
@@ -141,5 +142,16 @@ CELERY_BEAT_SCHEDULE = {
     'backup task': {
         'task': 'app3.tasks.backup',
         'schedule': 10.0,
+    }
+}
+
+CELERY_RESULT_BACKEND = 'django-db'
+
+CELERY_CACHE_BACKEND = 'default'
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+        'LOCATION': 'cachedb'
     }
 }

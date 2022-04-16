@@ -1,1 +1,1 @@
-[{"model": "app3.post", "pk": 1, "fields": {"name": "Fayemi Boluwatife"}}] {"model": "app3.post", "pk": 2, "fields": {"name": "Fayemi Victor"}}]
+[{"model": "app3.post", "pk": 1, "fields": {"name": "Fayemi Boluwatife"}}, {"model": "app3.post", "pk": 2, "fields": {"name": "Fayemi Victor"}}]
